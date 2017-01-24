@@ -65,3 +65,8 @@ float VectorNorm(Vector v)
 {
 	return sqrtf(v.x * v.x + v.y * v.y + v.z * v.z);
 }
+
+float VectorDot(Vector va, Vector vb)
+{
+	return va.x * vb.x + va.y * vb.y + va.z * vb.z;
+}

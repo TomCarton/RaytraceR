@@ -8,12 +8,14 @@
 
 typedef struct
 {
-	Vector o;
+	Vector c;
 	float r;
 
 } Sphere;
 
-Sphere SphereSet(Vector o, float r);
+Sphere SphereSet(Vector c, float r);
+
+int SphereIntersect(Sphere s, Ray r, float *t);
 
 
 #endif // __SPHERE_H__

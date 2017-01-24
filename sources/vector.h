@@ -19,6 +19,6 @@ Vector VectorMul(Vector v, float m);
 Vector VectorDiv(Vector v, float d);
 
 float VectorNorm(Vector v);
-
+float VectorDot(Vector va, Vector vb);
 
 #endif // __VECTOR_H__
