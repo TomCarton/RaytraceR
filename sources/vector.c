@@ -1,6 +1,20 @@
 // vector.c
 
+#include <math.h>
+
 #include "vector.h"
+
+
+Vector VectorSet(float x, float y, float z)
+{
+	Vector v;
+	
+	v.x = x;
+	v.y = y;
+	v.z = z;
+
+	return v;	
+}
 
 
 Vector VectorAdd(const Vector va, Vector vb)
@@ -25,7 +39,7 @@ Vector VectorSub(Vector va, Vector vb)
 	return vc;
 }
 
-Vector VectorMultiply(Vector v, float m)
+Vector VectorMul(Vector v, float m)
 {
 	Vector w;
 
@@ -36,7 +50,7 @@ Vector VectorMultiply(Vector v, float m)
 	return w;
 }
 
-Vector VectorDivide(Vector v, float d)
+Vector VectorDiv(Vector v, float d)
 {
 	Vector w;
 
@@ -45,4 +59,9 @@ Vector VectorDivide(Vector v, float d)
 	w.z = v.z / d;
 
 	return w;
+}
+
+float VectorNorm(Vector v)
+{
+	return sqrtf(v.x * v.x + v.y * v.y + v.z * v.z);
 }

@@ -1,15 +1,24 @@
 // vector.h
 
+
+#ifndef __VECTOR_H__
+#define __VECTOR_H__
+
+
 typedef struct
 {
 	float x, y, z;
 
-	Vector(float a, float b, float c) { x = a; y = b; z = c; }
-	
 } Vector;
 
+Vector VectorSet(float x, float y, float z);
 
 Vector VectorAdd(Vector va, Vector vb);
 Vector VectorSub(Vector va, Vector vb);
-Vector VectorMultiply(Vector v, m);
-Vector VectorDivide(Vector v, float d);
+Vector VectorMul(Vector v, float m);
+Vector VectorDiv(Vector v, float d);
+
+float VectorNorm(Vector v);
+
+
+#endif // __VECTOR_H__
