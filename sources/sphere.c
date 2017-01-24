@@ -43,3 +43,8 @@ int SphereIntersect(Sphere s, Ray r, float *t)
 		return 1;
 	}
 }
+
+Vector SphereNormal(Sphere s, Vector p)
+{
+	return VectorDiv(VectorSub(p, s.c), s.r);
+}

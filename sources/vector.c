@@ -61,12 +61,25 @@ Vector VectorDiv(Vector v, float d)
 	return w;
 }
 
+float VectorDot(Vector va, Vector vb)
+{
+	return va.x * vb.x + va.y * vb.y + va.z * vb.z;
+}
+
 float VectorNorm(Vector v)
 {
 	return sqrtf(v.x * v.x + v.y * v.y + v.z * v.z);
 }
 
-float VectorDot(Vector va, Vector vb)
+Vector VectorNormalize(Vector v)
 {
-	return va.x * vb.x + va.y * vb.y + va.z * vb.z;
+	float n = VectorNorm(v);
+
+	Vector w;
+
+	w.x = v.x / n;
+	w.y = v.y / n;
+	w.z = v.z / n;
+
+	return w;
 }

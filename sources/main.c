@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
     unsigned char *image = malloc(kWidth * kHeight * 3);
 
 	Sphere sphere = SphereSet(VectorSet(kWidth / 2.f, kHeight / 2.f, 50), 100);
+	Vector light = VectorSet(kWidth / 2.f, 0, -50);
 
     for (unsigned int y = 0; y < kHeight; ++y)
     {
@@ -32,7 +33,13 @@ int main(int argc, char *argv[])
     		float t;
     		if (SphereIntersect(sphere, ray, &t))
     		{
-    			c = ColorSet(255, 255, 255);
+    			Vector p = VectorAdd(ray.o, VectorMul(ray.d, t));
+    			
+    			Vector L = VectorSub(light, p);
+    			Vector N = SphereNormal(sphere, p);
+    			float dt = VectorDot(VectorNormalize(L), VectorNormalize(N));
+
+    			c = ColorSet(255 * dt, 255 * dt, 255 * dt);
     		}
 
 

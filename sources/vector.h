@@ -18,7 +18,9 @@ Vector VectorSub(Vector va, Vector vb);
 Vector VectorMul(Vector v, float m);
 Vector VectorDiv(Vector v, float d);
 
-float VectorNorm(Vector v);
 float VectorDot(Vector va, Vector vb);
+float VectorNorm(Vector v);
+
+Vector VectorNormalize(Vector v);
 
 #endif // __VECTOR_H__

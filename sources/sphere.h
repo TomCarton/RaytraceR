@@ -17,5 +17,7 @@ Sphere SphereSet(Vector c, float r);
 
 int SphereIntersect(Sphere s, Ray r, float *t);
 
+Vector SphereNormal(Sphere s, Vector p);
+
 
 #endif // __SPHERE_H__
